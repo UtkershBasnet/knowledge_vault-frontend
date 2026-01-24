@@ -30,7 +30,7 @@ Users frequently encounter interesting information or have creative ideas that t
 ### Steps
 1. **Navigate to frontend directory:**
    ```bash
-   cd frontend
+   cd knowledge_vault-frontend
    ```
 2. **Install dependencies:**
    ```bash
