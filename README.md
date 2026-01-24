@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
+# Knowledge Vault - Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, cross-platform mobile application built with React Native and Expo. Knowledge Vault serves as your AI-assisted "second brain," allowing you to capture ideas and find them using semantic search.
 
-## Get started
+## Problem Statement
+Users frequently encounter interesting information or have creative ideas that they document but later struggle to find because they cannot remember the exact keywords used. Knowledge Vault addresses this by integrating with an AI backend to provide meaning-based retrieval, making personal knowledge truly accessible.
 
-1. Install dependencies
+## Tech Stack Used
+- **Frontend Framework:** [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/) (SDK 54)
+- **Navigation:** [Expo Router](https://docs.expo.dev/router/introduction/) (File-based routing)
+- **Styling:** Vanilla React Native Stylesheets with Lucide Icons
+- **Networking:** [Axios](https://axios-http.com/)
+- **State Management:** React Context API (AuthContext)
+- **Animations:** React Native Reanimated
 
+## Features Implemented
+- **Secure Authentication:** Persistent login session management.
+- **Dynamic Knowledge Feed:** View and manage your stored knowledge items.
+- **AI-Powered Search:** Dedicated search tab for semantic, meaning-based queries.
+- **Rich Editor:** Intuitive interface for adding and editing knowledge items with titles, content, and tags.
+- **Native Experience:** Smooth navigation and haptic feedback.
+
+## How to Run Locally
+
+### Prerequisites
+- Node.js (LTS version)
+- Expo Go app on your mobile device (for testing on physical hardware)
+- Backend service running (see [Backend README](../backend/README.md))
+
+### Steps
+1. **Navigate to frontend directory:**
+   ```bash
+   cd frontend
+   ```
+2. **Install dependencies:**
    ```bash
    npm install
    ```
-
-2. Start the app
-
+3. **Configure API URL:**
+   Update the `API_URL` in `app.json` to point to your backend's local IP address:
+   ```json
+   "extra": {
+     "API_URL": "http://YOUR_LOCAL_IP:8000"
+   }
+   ```
+4. **Start the development server:**
    ```bash
    npx expo start
    ```
+5. **Open the app:**
+   Scan the QR code with the Expo Go app (Android) or Camera app (iOS).
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Project Structure
+- `/app`: Main application routes and screens (using Expo Router).
+- `/components`: Reusable UI elements (cards, inputs, buttons).
+- `/context`: Global state providers (Authentication).
+- `/api`: API client configuration and network calls.
+- `/constants`: Theme and styling constants.
